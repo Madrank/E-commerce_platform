@@ -1,8 +1,16 @@
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { ShoppingCart, User, Search, Menu, X, LogOut, Settings } from 'lucide-react';
-import { useCart } from '../../contexts/CartContext';
-import { useAuth } from '../../contexts/AuthContext';
+import {
+  LogOut,
+  Menu,
+  Search,
+  Settings,
+  ShoppingCart,
+  User,
+  X,
+} from "lucide-react";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../../contexts/AuthContext";
+import { useCart } from "../../contexts/CartContext";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -14,7 +22,7 @@ export default function Navbar() {
   const handleLogout = () => {
     logout();
     setIsUserMenuOpen(false);
-    navigate('/');
+    navigate("/");
   };
 
   return (
@@ -24,19 +32,28 @@ export default function Navbar() {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
             <ShoppingCart className="h-8 w-8 text-blue-600" />
-            <span className="text-xl font-bold text-gray-900">ShopHub</span>
+            <span className="text-xl font-bold text-gray-900">Bouticlick</span>
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link to="/" className="text-gray-700 hover:text-blue-600 transition-colors">
+            <Link
+              to="/"
+              className="text-gray-700 hover:text-blue-600 transition-colors"
+            >
               Home
             </Link>
-            <Link to="/products" className="text-gray-700 hover:text-blue-600 transition-colors">
+            <Link
+              to="/products"
+              className="text-gray-700 hover:text-blue-600 transition-colors"
+            >
               Products
             </Link>
-            {user?.role === 'admin' && (
-              <Link to="/admin" className="text-gray-700 hover:text-blue-600 transition-colors">
+            {user?.role === "admin" && (
+              <Link
+                to="/admin"
+                className="text-gray-700 hover:text-blue-600 transition-colors"
+              >
                 Admin
               </Link>
             )}
@@ -57,7 +74,10 @@ export default function Navbar() {
           {/* Right Section */}
           <div className="flex items-center space-x-4">
             {/* Cart */}
-            <Link to="/cart" className="relative p-2 text-gray-700 hover:text-blue-600 transition-colors">
+            <Link
+              to="/cart"
+              className="relative p-2 text-gray-700 hover:text-blue-600 transition-colors"
+            >
               <ShoppingCart className="h-6 w-6" />
               {cartState.itemCount > 0 && (
                 <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
@@ -76,7 +96,7 @@ export default function Navbar() {
                   <User className="h-6 w-6" />
                   <span className="hidden md:block">{user.name}</span>
                 </button>
-                
+
                 {isUserMenuOpen && (
                   <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg border z-50">
                     <Link
@@ -86,7 +106,7 @@ export default function Navbar() {
                     >
                       My Orders
                     </Link>
-                    {user.role === 'admin' && (
+                    {user.role === "admin" && (
                       <Link
                         to="/admin"
                         className="block px-4 py-2 text-gray-700 hover:bg-gray-50 transition-colors"
@@ -120,7 +140,11 @@ export default function Navbar() {
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="md:hidden p-2 text-gray-700 hover:text-blue-600 transition-colors"
             >
-              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {isMenuOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
             </button>
           </div>
         </div>
@@ -153,7 +177,7 @@ export default function Navbar() {
               >
                 Products
               </Link>
-              {user?.role === 'admin' && (
+              {user?.role === "admin" && (
                 <Link
                   to="/admin"
                   className="px-4 py-2 text-gray-700 hover:text-blue-600 transition-colors"

@@ -1,6 +1,5 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { ShoppingCart, Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, MapPin, Phone, ShoppingCart } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -11,10 +10,11 @@ export default function Footer() {
           <div>
             <Link to="/" className="flex items-center space-x-2 mb-4">
               <ShoppingCart className="h-8 w-8 text-blue-400" />
-              <span className="text-xl font-bold">ShopHub</span>
+              <span className="text-xl font-bold">Bouticlick</span>
             </Link>
             <p className="text-gray-300 mb-4">
-              Your premier destination for quality products at competitive prices.
+              Your premier destination for quality products at competitive
+              prices.
             </p>
             <div className="flex space-x-4">
               <div className="flex items-center text-gray-300">
@@ -29,17 +29,26 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/" className="text-gray-300 hover:text-blue-400 transition-colors">
+                <Link
+                  to="/"
+                  className="text-gray-300 hover:text-blue-400 transition-colors"
+                >
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/products" className="text-gray-300 hover:text-blue-400 transition-colors">
+                <Link
+                  to="/products"
+                  className="text-gray-300 hover:text-blue-400 transition-colors"
+                >
                   Products
                 </Link>
               </li>
               <li>
-                <Link to="/cart" className="text-gray-300 hover:text-blue-400 transition-colors">
+                <Link
+                  to="/cart"
+                  className="text-gray-300 hover:text-blue-400 transition-colors"
+                >
                   Cart
                 </Link>
               </li>
@@ -51,22 +60,34 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-4">Customer Service</h3>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-gray-300 hover:text-blue-400 transition-colors">
+                <a
+                  href="#"
+                  className="text-gray-300 hover:text-blue-400 transition-colors"
+                >
                   Contact Us
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-300 hover:text-blue-400 transition-colors">
+                <a
+                  href="#"
+                  className="text-gray-300 hover:text-blue-400 transition-colors"
+                >
                   Shipping Info
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-300 hover:text-blue-400 transition-colors">
+                <a
+                  href="#"
+                  className="text-gray-300 hover:text-blue-400 transition-colors"
+                >
                   Returns
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-300 hover:text-blue-400 transition-colors">
+                <a
+                  href="#"
+                  className="text-gray-300 hover:text-blue-400 transition-colors"
+                >
                   FAQ
                 </a>
               </li>
@@ -90,9 +111,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center">
-          <p className="text-gray-300">
-            © 2024 ShopHub. All rights reserved.
-          </p>
+          <p className="text-gray-300">© 2024 ShopHub. All rights reserved.</p>
         </div>
       </div>
     </footer>

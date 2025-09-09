@@ -1,8 +1,7 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { ArrowRight, ShoppingBag, Shield, Truck } from 'lucide-react';
-import ProductGrid from '../components/Product/ProductGrid';
-import { mockProducts } from '../data/products';
+import { ArrowRight, Shield, ShoppingBag, Truck } from "lucide-react";
+import { Link } from "react-router-dom";
+import ProductGrid from "../components/Product/ProductGrid";
+import { mockProducts } from "../data/products";
 
 export default function HomePage() {
   const featuredProducts = mockProducts.slice(0, 8);
@@ -14,7 +13,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Welcome to ShopHub
+              Welcome to Bouticlick
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-blue-100">
               Discover amazing products at unbeatable prices
@@ -63,14 +62,16 @@ export default function HomePage() {
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Featured Products</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              Featured Products
+            </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
               Check out our most popular products chosen by our customers
             </p>
           </div>
-          
+
           <ProductGrid products={featuredProducts} />
-          
+
           <div className="text-center mt-12">
             <Link
               to="/products"
@@ -87,11 +88,10 @@ export default function HomePage() {
       <section className="py-16 bg-blue-600">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h2 className="text-3xl font-bold text-white mb-4">
-              Stay Updated
-            </h2>
+            <h2 className="text-3xl font-bold text-white mb-4">Stay Updated</h2>
             <p className="text-blue-100 mb-8 max-w-2xl mx-auto">
-              Subscribe to our newsletter and be the first to know about new products and special offers
+              Subscribe to our newsletter and be the first to know about new
+              products and special offers
             </p>
             <div className="max-w-md mx-auto flex">
               <input
